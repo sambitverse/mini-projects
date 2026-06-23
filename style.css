@@ -1,0 +1,311 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#111;
+    color:white;
+}
+
+/* NAVBAR */
+
+.navbar{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 8%;
+    z-index:10;
+}
+
+.logo{
+    font-size:1.8rem;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.nav-links{
+    list-style:none;
+    display:flex;
+    gap:35px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#00aaff;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    background:url("https://images.unsplash.com/photo-1494905998402-395d579af36f?w=1600")
+    center center/cover no-repeat;
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    width:700px;
+    margin-left:8%;
+}
+
+.subtitle{
+    text-transform:uppercase;
+    letter-spacing:3px;
+    color:#d9d9d9;
+    margin-bottom:15px;
+}
+
+.hero-content h1{
+    font-size:5rem;
+    margin-bottom:20px;
+}
+
+.description{
+    font-size:1.1rem;
+    line-height:1.7;
+    color:#ddd;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+}
+
+.btn{
+    text-decoration:none;
+    padding:14px 28px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.primary{
+    background:#0077ff;
+    color:white;
+}
+
+.primary:hover{
+    background:#005ecc;
+}
+
+.secondary{
+    border:2px solid white;
+    color:white;
+}
+
+.secondary:hover{
+    background:white;
+    color:black;
+}
+
+/* FEATURED */
+
+.featured{
+    padding:80px 8%;
+}
+
+.featured h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:2.5rem;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#1b1b1b;
+    overflow:hidden;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card-content h3{
+    margin-bottom:10px;
+}
+
+/* BANNER */
+
+.banner{
+    height:70vh;
+    background:url("https://images.unsplash.com/photo-1502161254066-6c74afbf07aa?w=1600")
+    center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.banner-content{
+    background:rgba(0,0,0,0.55);
+    padding:50px;
+}
+
+.banner-content h2{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.banner-content p{
+    margin-bottom:25px;
+}
+
+/* FOOTER */
+
+footer{
+    background:black;
+    text-align:center;
+    padding:25px;
+    color:#999;
+}
+
+/* RESPONSIVE */
+
+/* Section Styling */
+
+.section-block{
+    padding:80px 8%;
+    min-height:auto;
+}
+
+.section-content{
+    max-width:1000px;
+    margin:0 auto;
+}
+
+.section-block h2{
+    font-size:2.5rem;
+    margin-bottom:30px;
+}
+
+.section-block p{
+    font-size:1.1rem;
+    line-height:1.7;
+    color:#ddd;
+    margin-bottom:30px;
+}
+
+.features-list{
+    list-style:none;
+    margin-top:20px;
+}
+
+.features-list li{
+    padding:15px 0;
+    padding-left:30px;
+    position:relative;
+    font-size:1.1rem;
+    color:#ddd;
+}
+
+.features-list li:before{
+    content:"▸";
+    position:absolute;
+    left:0;
+    color:#0077ff;
+    font-size:1.5rem;
+}
+
+/* Experience Section */
+
+.experience-section{
+    background:#1a1a1a;
+}
+
+.experience-cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-top:30px;
+}
+
+.exp-card{
+    background:#252525;
+    padding:30px;
+    transition:0.3s;
+    border-left:4px solid #0077ff;
+}
+
+.exp-card:hover{
+    background:#2a2a2a;
+    transform:translateX(10px);
+}
+
+.exp-card h3{
+    font-size:1.3rem;
+    margin-bottom:15px;
+    color:#0077ff;
+}
+
+.exp-card p{
+    color:#bbb;
+    margin:0;
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .nav-links{
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero-content{
+        width:90%;
+    }
+
+    .hero-content h1{
+        font-size:3rem;
+    }
+
+    .banner-content h2{
+        font-size:2rem;
+    }
+}
