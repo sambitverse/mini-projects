@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chrome Dino - Retro Pixel Edition</title>
+    <meta name="description" content="Play Chrome Dino, the classic T-Rex Runner game in a retro pixelated monochrome layout.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Ambient glow decorative layers -->
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+
+    <div class="game-container">
+        <!-- Header HUD -->
+        <header class="game-header">
+            <h1 class="logo-text">CYBER DINO</h1>
+            
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div class="scoreboard">
+                    <div class="score-item high-score-item">HI <span id="high-score-val">00000</span></div>
+                    <div class="score-item">SCORE <span id="current-score-val">00000</span></div>
+                </div>
+
+                <div class="utility-panel">
+                    <button class="icon-btn" id="toggle-sound" title="Toggle Sound">
+                        <span class="icon">🔊</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Canvas and Overlays Wrapper -->
+        <div class="canvas-wrapper" id="canvas-wrapper">
+            <!-- HTML5 Canvas for drawing -->
+            <canvas id="game-canvas" width="600" height="150"></canvas>
+
+            <!-- Screen Overlay: Start Screen -->
+            <div class="overlay active" id="start-overlay">
+                <h2 class="overlay-title start">CYBER DINO</h2>
+                <p class="overlay-subtitle">
+                    Press Space or click to run. Dodge obstacles and survive as long as you can!
+                </p>
+                <button class="btn" id="start-btn">Initialize Run</button>
+            </div>
+
+            <!-- Screen Overlay: Game Over Screen -->
+            <div class="overlay" id="gameover-overlay">
+                <h2 class="overlay-title over">SYSTEM CRASH</h2>
+                <p class="overlay-subtitle">
+                    Dino core overheated due to collision. Total sector yield:
+                    <br><strong class="final-score-container"><span id="final-score">0</span> pts</strong>
+                </p>
+                <button class="btn btn-pink" id="restart-btn">Reboot System</button>
+            </div>
+        </div>
+
+        <!-- Desktop Controls Info -->
+        <div class="control-hints">
+            <div class="hint-item">
+                <span class="key-badge">Space</span> or <span class="key-badge">W</span> or <span class="key-badge">▲</span>
+                <span>Jump</span>
+            </div>
+            <div class="hint-item">
+                <span class="key-badge">S</span> or <span class="key-badge">▼</span>
+                <span>Duck under birds</span>
+            </div>
+        </div>
+
+        <!-- Mobile Touch Controls HUD -->
+        <div class="mobile-controls">
+            <button class="mobile-btn" id="mobile-duck">
+                <span>▼</span> DUCK
+            </button>
+            <button class="mobile-btn" id="mobile-jump">
+                JUMP <span>▲</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="sound.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
