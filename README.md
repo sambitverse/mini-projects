@@ -7,4 +7,4 @@ A collection of small projects built while learning and practicing web developme
 - CSS
 - JavaScript
 
-More projects will be added over time
+More projects will be added over time 😊
